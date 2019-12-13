@@ -11,6 +11,15 @@ IMPROVEMENTS:
      false in your local values file. NOTE: If `connectInject.enabled` is false,
      then central config is not enabled so this change will not affect you. 
 
+  * Optionally allow enabling TLS for servers and clients [[GH-313](https://github.com/hashicorp/consul-helm/pull/313/files#)].
+
+    Note that consul-k8s components don't currently work with HTTPS
+    enabled and HTTP disabled. For this reason, we don't disable HTTP by
+    default when TLS is enabled. This will be changed once consul-k8s supports HTTPS.
+    Also note that this feature is only supported if both servers and clients are running
+    on Kubernetes. We will have better support for other deployment architectures,
+    as well as bringing your own CA, in the future.
+
 ## 0.14.0 (Dec 10, 2019)
 
 IMPROVEMENTS:
